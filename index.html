@@ -195,6 +195,27 @@
             display: none !important;
         }
 
+        .btn-academia-header {
+            background: #FF6B00;
+            color: #fff !important;
+            padding: 0.5rem 1.3rem !important;
+            border-radius: 25px;
+            font-weight: 700 !important;
+            letter-spacing: 0.5px;
+            transition: var(--transicao);
+            text-decoration: none;
+            white-space: nowrap;
+            cursor: pointer;
+        }
+        .btn-academia-header:hover {
+            background: #FF8F33;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 0, 0.5);
+        }
+        .btn-academia-header::after {
+            display: none !important;
+        }
+
         /* Hero / Carrossel */
         .hero-carrossel {
             position: relative;
@@ -427,6 +448,7 @@
             box-shadow: var(--sombra);
             transition: var(--transicao);
             border-top: 5px solid var(--azul-claro);
+            cursor: pointer;
         }
         .curso-card:hover {
             transform: translateY(-8px);
@@ -459,6 +481,56 @@
             font-weight: 600;
             margin-top: 1rem;
             letter-spacing: 0.5px;
+        }
+
+        /* Card Academia */
+        .card-academia {
+            background: linear-gradient(135deg, #1A1A1A, #0A0A0A);
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            box-shadow: var(--sombra);
+            transition: var(--transicao);
+            border-top: 5px solid #FF6B00;
+            cursor: pointer;
+            color: #fff;
+        }
+        .card-academia:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 40px rgba(255, 107, 0, 0.3);
+            border-top-color: #FF8F33;
+        }
+        .card-academia .icone-academia {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        .card-academia h4 {
+            font-size: 1.4rem;
+            color: #FF6B00;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        .card-academia p {
+            color: #aaa;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .card-academia .btn-academia {
+            display: inline-block;
+            background: #FF6B00;
+            color: #fff;
+            padding: 0.8rem 2rem;
+            border-radius: 25px;
+            font-weight: 700;
+            margin-top: 1rem;
+            text-decoration: none;
+            transition: var(--transicao);
+            letter-spacing: 0.5px;
+        }
+        .card-academia .btn-academia:hover {
+            background: #FF8F33;
+            box-shadow: 0 6px 20px rgba(255, 107, 0, 0.5);
         }
 
         /* Localização */
@@ -554,6 +626,29 @@
             box-shadow: 0 14px 40px rgba(201, 168, 76, 0.6);
         }
 
+        .btn-academia-grande {
+            display: inline-block;
+            background: #FF6B00;
+            color: #fff;
+            padding: 1rem 2.8rem;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            text-decoration: none;
+            transition: var(--transicao);
+            box-shadow: 0 8px 30px rgba(255, 107, 0, 0.4);
+            text-transform: uppercase;
+            cursor: pointer;
+            border: none;
+            margin-top: 1rem;
+        }
+        .btn-academia-grande:hover {
+            background: #FF8F33;
+            transform: translateY(-4px);
+            box-shadow: 0 14px 40px rgba(255, 107, 0, 0.6);
+        }
+
         /* Footer */
         .footer {
             background: var(--azul-escuro);
@@ -571,9 +666,10 @@
                 text-align: center;
             }
             .nav-links {
-                gap: 1rem;
+                gap: 0.8rem;
                 font-size: 0.85rem;
                 justify-content: center;
+                flex-wrap: wrap;
             }
             .hero-carrossel {
                 height: 55vh;
@@ -604,7 +700,7 @@
 </head>
 <body>
 
-    <!-- MARCA D'ÁGUA COM LOGO DO COLÉGIO -->
+    <!-- MARCA D'ÁGUA -->
     <div class="marca-dagua-fundo" aria-hidden="true">
         <span class="logo-watermark">POLO</span>
     </div>
@@ -624,6 +720,7 @@
                     <li><a href="#inicio">Início</a></li>
                     <li><a href="#cursos">Cursos</a></li>
                     <li><a href="#localizacao">Localização</a></li>
+                    <li><a class="btn-academia-header" href="https://get-academia.base44.app/" target="_blank">🏋️ Academia</a></li>
                     <li><a class="btn-portfolio-header" onclick="abrirPortfolio()">📁 Meu Portfólio</a></li>
                 </ul>
             </nav>
@@ -649,21 +746,27 @@
 
     <!-- CURSOS -->
     <section class="secao" id="cursos">
-        <h2 class="secao-titulo">Cursos Oferecidos</h2>
+        <h2 class="secao-titulo">Cursos e Projetos</h2>
         <div class="linha-decorativa"></div>
-        <p class="secao-subtitulo">O Colégio Polo oferece formações técnicas de excelência</p>
+        <p class="secao-subtitulo">O Colégio Polo oferece formações técnicas e projetos inovadores</p>
         <div class="cursos-grid">
-            <div class="curso-card">
+            <div class="curso-card" onclick="abrirPortfolio()">
                 <span class="icone-curso">💻</span>
                 <h4>Desenvolvimento de Sistemas</h4>
                 <p>Aprenda a criar softwares, aplicativos web e sistemas completos, com lógica de programação, bancos de dados e metodologias ágeis.</p>
                 <span class="tag-curso">Técnico Profissionalizante</span>
             </div>
-            <div class="curso-card">
+            <div class="curso-card" onclick="abrirPortfolio()">
                 <span class="icone-curso">🤖</span>
                 <h4>Desenvolvimento de IA</h4>
                 <p>Mergulhe em machine learning, processamento de linguagem natural e visão computacional, formando-se para a era digital.</p>
                 <span class="tag-curso">Técnico Profissionalizante</span>
+            </div>
+            <div class="card-academia" onclick="window.open('https://get-academia.base44.app/', '_blank')">
+                <span class="icone-academia">🏋️</span>
+                <h4>Projeto Academia</h4>
+                <p>Site completo de academia desenvolvido como projeto escolar. Clique para acessar!</p>
+                <span class="btn-academia">Acessar Academia</span>
             </div>
         </div>
     </section>
@@ -685,22 +788,23 @@
                 <div class="info-item"><span class="emoji">📞</span><span>Telefone: (XX) XXXX-XXXX</span></div>
                 <div class="info-item"><span class="emoji">✉️</span><span>contato@colegiopolo.com.br</span></div>
                 <div class="info-item"><span class="emoji">🕐</span><span>Seg a Sex: 7h às 18h</span></div>
-                <p style="margin-top:1rem;font-size:0.85rem;color:#666;"><em>💡 Substitua os dados acima pelas informações reais da Unidade Polo.</em></p>
             </div>
         </div>
     </section>
 
-    <!-- BOTÃO PARA O PORTFÓLIO -->
+    <!-- CTA -->
     <div class="cta-portfolio">
         <button class="btn-portfolio-grande" onclick="abrirPortfolio()">📁 Acessar Meu Portfólio</button>
+        <br>
+        <a class="btn-academia-grande" href="https://get-academia.base44.app/" target="_blank">🏋️ Acessar Site da Academia</a>
         <p style="margin-top:0.8rem;color:var(--texto-medio);font-size:0.9rem;">Confira meus projetos e toda a minha trajetória em tecnologia</p>
     </div>
 
-    <!-- MODAL DO PORTFÓLIO (COM IFRAME) -->
+    <!-- MODAL DO PORTFÓLIO -->
     <div class="modal-overlay" id="modalPortfolio">
         <div class="modal-conteudo">
             <button class="modal-fechar" onclick="fecharPortfolio()">&times;</button>
-            <iframe class="modal-iframe" id="portfolioIframe" title="Portfólio Maria"></iframe>
+            <iframe class="modal-iframe" id="portfolioIframe" title="Portfólio"></iframe>
         </div>
     </div>
 
@@ -709,7 +813,9 @@
         <p style="font-weight: 700; color: white; font-size: 1.2rem;">Colégio Polo</p>
         <p style="color: var(--dourado); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase;">Unidade Polo</p>
         <p style="margin-top:0.6rem; font-size:0.85rem;">&copy; 2026 - Página desenvolvida por aluna do 3º ano | Desenvolvimento de Sistemas</p>
-        <a href="https://www.linkedin.com/in/maria-pereira-04387440b/" target="_blank">Linkedin</a>
+        <a href="https://www.linkedin.com/in/maria-pereira-04387440b/" target="_blank" style="color: #bcc7d9;">LinkedIn</a>
+        &nbsp;|&nbsp;
+        <a href="https://get-academia.base44.app/" target="_blank" style="color: #FF6B00;">Projeto Academia</a>
     </footer>
 
     <script>
@@ -909,11 +1015,7 @@
             aulas: [
                 { nome: "📄 Agenda Escolar Digital", descricao: "Planejamento e organização escolar no Gamma.", links: [{ nome: "📖 Acessar Gamma", url: "https://gamma.app/docs/Agenda-Escolar-Digital-eecx4lgl6d43c8i?mode=doc" }] },
                 { nome: "🏛️ Propriedade Intelectual", descricao: "Protegendo a Inovação e Criatividade.", links: [{ nome: "📖 Ver Documento", url: "https://gamma.app/docs/O-Universo-da-Propriedade-Intelectual-81yhzqzlh6ygpji?mode=doc" }] },
-                { nome: "🚀 Ecossistema de Startups 2026", descricao: "A Nova Era dos Unicórnios Latino-Americanos.", links: [{ nome: "📖 Ver Documento", url: "https://gamma.app/docs/Ecossistema-de-Startups-2026-A-Nova-Era-dos-Unicornios-Latino-Ame-rrlvid92y60z8at" }] },
-                { nome: "🧠 Insights de IA - NotebookLM", descricao: "Análise inteligente e curadoria de documentos via NotebookLM.", links: [
-                    { nome: "🔗 as melhores IA's de 2026", url: "https://notebooklm.google.com/notebook/0017e66c-14a8-4019-a5fc-5c936d4555d1/artifact/11b632a0-3206-40b8-8b73-e81189ab924b?utm_source=nlm_web_share&utm_medium=google_oo&utm_campaign=art_share_2&utm_content=&utm_smc=nlm_web_share_google_oo_art_share_2_" },
-                    { nome: "🔗 SUA ANALISE SOBRE TRABALHO DOS ALUNOS 1 ANO", url: "https://notebooklm.google.com/notebook/0017e66c-14a8-4019-a5fc-5c936d4555d1/artifact/11b632a0-3206-40b8-8b73-e81189ab924b?utm_source=nlm_web_share&utm_medium=google_oo&utm_campaign=art_share_2&utm_content=&utm_smc=nlm_web_share_google_oo_art_share_2_" }
-                ] }
+                { nome: "🚀 Ecossistema de Startups 2026", descricao: "A Nova Era dos Unicórnios Latino-Americanos.", links: [{ nome: "📖 Ver Documento", url: "https://gamma.app/docs/Ecossistema-de-Startups-2026-A-Nova-Era-dos-Unicornios-Latino-Ame-rrlvid92y60z8at" }] }
             ]
         },
         "javascript": {
@@ -921,32 +1023,21 @@
             aulas: [
                 { nome: "📦 Variáveis em JS", descricao: "Estudo sobre tipos de dados e declarações.", links: [{ nome: "🐙 Repositório", url: "https://github.com/maria-off/variaveis" }] },
                 { nome: "🔄 Estrutura For", descricao: "Dominando laços de repetição.", links: [{ nome: "🐙 Repositório", url: "https://github.com/maria-off/Usando-For" }] },
-                { nome: "⏸️ Break e Continue", descricao: "Controle de fluxo em loops.", links: [{ nome: "🐙 Repositório", url: "https://github.com/maria-off/breake-continue" }] },
                 { nome: "🔍 Método Filtra", descricao: "Filtragem de arrays em JavaScript.", links: [{ nome: "🐙 Repositório", url: "https://github.com/maria-off/filtra" }] }
             ]
         },
         "algoritmos": {
             nomeExibicao: "Algoritmos ⚙️", icone: "fas fa-code-branch",
             aulas: [
-                { nome: "🔄 Selection Sort", descricao: "Lógica de ordenação passo a passo.", links: [{ nome: "🐙 Repositório", url: "https://github.com/maria-off/SelectionSort" }] },
-                { nome: "📊 Ordenados", descricao: "Estudos de algoritmos de organização.", links: [{ nome: "🐙 Repositório", url: "https://github.com/maria-off/ordenados" }] }
+                { nome: "🔄 Selection Sort", descricao: "Lógica de ordenação passo a passo.", links: [{ nome: "🐙 Repositório", url: "https://github.com/maria-off/SelectionSort" }] }
             ]
         },
         "html-projetos": {
             nomeExibicao: "Projetos Web 🌐", icone: "fab fa-html5",
             aulas: [
                 { nome: "🧪 Teste GitHub Pages", descricao: "Primeiro deploy realizado com sucesso.", links: [{ nome: "🌍 Ver Site", url: "https://maria-off.github.io/teste/teste.html" }] },
-                { nome: "📅 Terceirão 2026", descricao: "Projeto dedicado à turma de 2026.", links: [{ nome: "🌍 Ver Site", url: "https://maria-off.github.io/Terceir-o-2026/teste.html" }] }
-            ]
-        },
-        "mobile": {
-            nomeExibicao: "Mobile 📱", icone: "fas fa-mobile-alt",
-            aulas: [
-                { nome: "📲 QR Codes de Acesso", descricao: "Escaneie para abrir no celular.", isQR: true, qrs: [
-                    { label: "Projeto 01", img: "1.png" },
-                    { label: "Projeto 02", img: "2.png" }
-                ]},
-                { nome: "🎬 Locadora 2026", descricao: "Sistema de locadora de filmes com design responsivo para mobile.", links: [{ nome: "🌐 Ver Site", url: "https://maria-off.github.io/Locadora--2026/index.html" }] }
+                { nome: "🎬 Locadora 2026", descricao: "Sistema de locadora de filmes.", links: [{ nome: "🌐 Ver Site", url: "https://maria-off.github.io/Locadora--2026/index.html" }] },
+                { nome: "🏋️ Academia", descricao: "Site completo de academia.", links: [{ nome: "🌐 Ver Site", url: "https://get-academia.base44.app/" }] }
             ]
         },
         "games": {
@@ -958,7 +1049,7 @@
         "google-ai": {
             nomeExibicao: "Google AI Studio 🤖", icone: "fas fa-robot",
             aulas: [
-                { nome: "💰 Finanças", descricao: "Aplicação que ajuda a organizar suas finanças de forma inteligente.", links: [{ nome: "💸 Acessar App", url: "https://easiy-finance-494374422137.us-west1.run.app" }] },
+                { nome: "💰 Finanças", descricao: "Aplicação que ajuda a organizar suas finanças.", links: [{ nome: "💸 Acessar App", url: "https://easiy-finance-494374422137.us-west1.run.app" }] },
                 { nome: "🏫 ClassDojo Plus", descricao: "Plataforma de engajamento escolar.", links: [{ nome: "🌟 Acessar App", url: "https://classdojo-plus-494374422137.us-west1.run.app" }] }
             ]
         }
@@ -972,16 +1063,9 @@
         let html = '';
         data.aulas.forEach(aula => {
             html += '<div class="aula-item"><h3>'+aula.nome+'</h3><p style="color: #b9ad8f; font-size: 0.9rem; margin: 5px 0;">'+aula.descricao+'</p>';
-            if(aula.isQR) {
-                html += '<div class="qr-display">';
-                aula.qrs.forEach(qr => { html += '<div class="qr-card"><img src="'+qr.img+'" alt="QR"><p style="font-weight:bold; font-size:0.8rem;">'+qr.label+'</p></div>'; });
-                html += '</div>';
-            } else {
-                html += '<div class="links-container">';
-                aula.links.forEach(l => { html += '<a href="'+l.url+'" target="_blank" class="btn-link"><i class="fas fa-external-link-alt"></i> '+l.nome+'</a>'; });
-                html += '</div>';
-            }
-            html += '</div>';
+            html += '<div class="links-container">';
+            aula.links.forEach(l => { html += '<a href="'+l.url+'" target="_blank" class="btn-link"><i class="fas fa-external-link-alt"></i> '+l.nome+'</a>'; });
+            html += '</div></div>';
         });
         container.innerHTML = html;
         document.querySelectorAll('.subject-card').forEach(c => c.classList.remove('active'));
